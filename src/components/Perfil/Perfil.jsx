@@ -30,7 +30,7 @@ const Perfil = () => {
                 showBorder='true'
                 borderColor='#F1622B'
                 name='Cosentino Fernando'
-                src='/src/assets/perfil.png'
+                src='perfil.png'
                 mx='4'
             />
 
