@@ -1,4 +1,4 @@
-import { Card, CardBody, Text, Heading } from '@chakra-ui/react'
+import { Card, CardBody,  Heading } from '@chakra-ui/react'
 import Carrera from './Carrera'
 
 const Formacion = () => {
@@ -15,7 +15,14 @@ const Formacion = () => {
         >
             <CardBody>
                 <Heading size='md' color='#F1622B'>Formación:</Heading>
-                <Carrera titulo="Analista de sistemas"/>
+                <Carrera
+                    titulo="Analista de sistemas"
+                    institucion = "Instituto Argentino de la empresa HILET"
+                    ciudad = "Mar del plata"
+                    inicio = "04/2021"
+                    finalizacion = "05/2024"
+                    descripcion = "Habilidades en programacion, metodologias agiles, manejo de redes."
+                />
             </CardBody>
         </Card>
     )

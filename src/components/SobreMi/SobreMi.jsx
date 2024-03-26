@@ -15,11 +15,11 @@ const SobreMi = () => {
             <CardBody>
                 <Heading size='md' color='#F1622B'>Acerca de mí:</Heading>
                 <Text fontSize='md' py='2' color='#FF9E4D'>
-                    Soy un analista de sistema graduado en el Instituto Argentino de la empresa "HILET"
-                    y tecnico en reparacíon, armado y actualizacíon de computadoras graduado en la
-                    Universidad Tecnologica Nacional "UTN",
-                    me apasiona la informatica y resolver problemas que pongan a prueba mis conocimientos
-                    adquiridos en mis años de estudio.  
+                    Hola, mi nombre es Fernando y soy un analista de Sistemas con avanzada formación en ingeniería, con
+                    experiencia en dominio del hardware, con conocimiento de programación,
+                    base de datos, redes, sistemas operativos y metodologías ágiles. Me
+                    encuentro interesado en trabajar en el backend y en el lenguaje Python, pero disfruto todas las ramas
+                    de la programación.
                 </Text>
             </CardBody>
         </Card>

@@ -1,11 +1,13 @@
+body{
+  background-color: #00081B;
+}
+
 :root{
   background-color: #00081B;
-  padding-top: 2%;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding: 2% 10%;
 }
 @media only screen and (max-width: 700px) {
   :root {
-    padding: 2% 1%; 
+    padding: 2% 5%; 
   }
 }
