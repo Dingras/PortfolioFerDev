@@ -1,78 +1,85 @@
-import React from 'react'
+import { useState } from 'react'
 import { Card, Stack, Heading, Text, Button, CardBody, Wrap, WrapItem } from '@chakra-ui/react'
 import { Avatar } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons';
+import Links from '../../constants/Links'
+import Colors from '../../constants/Colors'
 import Swal from 'sweetalert2'
 
 const Perfil = () => {
 
+    const [isHoveredGitHub, setIsHoveredGitHub] = useState(false);
+    const [isHoveredLinkedin, setIsHoveredLinkedin] = useState(false);
+    const [isHoveredEmail, setIsHoveredEmail] = useState(false);
+    const [isHoveredCV, setIsHoveredCV] = useState(false);
+
     const goMyLinkedinProfile = () => {
-        window.open('https://www.linkedin.com/in/feracosentino/', '_blank');
+        window.open(Links.linkedin, '_blank');
     }
     const goMyGitHubProfile = () => {
-        window.open('https://github.com/Dingras', '_blank');
+        window.open(Links.github, '_blank');
     }
     const sendMeAEmail = () => {
         Swal.fire({
-            background:"#00081B",
-            title: "feracosentino@gmail.com",
+            background:Colors.Blue,
+            title: Links.email,
             text: "Esta es mi direccion de correo",
-            color:"#F1622B",
+            color: Colors.Orange,
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonColor: "#254168",
-            denyButtonColor: "#F1622B",
-            cancelButtonColor:"#d33",
+            confirmButtonColor: Colors.BlueLight,
+            denyButtonColor: Colors.Orange,
+            cancelButtonColor:Colors.Error,
             confirmButtonText: "Copiar mi direccion",
             denyButtonText: `Enviar un correo`,
             cancelButtonText:"Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                    background:"#00081B",
-                    color:"#F1622B",
+                    background: Colors.Blue,
+                    color: Colors.Orange,
                     position: "top-end",
                     title:"Correo copiado!",
                     icon:"success",
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
-                    navigator.clipboard.writeText("feracosentino@gmail.com");
+                    navigator.clipboard.writeText(Links.email);
                 });
             } else if (result.isDenied) {
                 Swal.fire({
-                    background:"#00081B",
-                    color:"#F1622B",
+                    background: Colors.Blue,
+                    color: Colors.Orange,
                     position: "top-end",
                     title:"Abriendo tu correo!",
                     icon:"info",
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
-                    window.location.href = "mailto:feracosentino@gmail.com";
+                    window.location.href = `mailto:${Links.email}`;
                 });
             }
         });
     }
     const showMyResume = () => {
         Swal.fire({
-            background:"#00081B",
+            background: Colors.Blue,
             icon:"question",
             showDenyButton: true,
             showCancelButton: true,
-            confirmButtonColor: "#254168",
-            denyButtonColor: "#F1622B",
-            cancelButtonColor:"#d33",
+            confirmButtonColor: Colors.BlueLight,
+            denyButtonColor: Colors.Orange,
+            cancelButtonColor: Colors.Error,
             confirmButtonText: "Ver CV",
             denyButtonText: "Descargar CV",
             cancelButtonText:"Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
-                    background:"#00081B",
-                    color:"#F1622B",
+                    background: Colors.Blue,
+                    color: Colors.Orange,
                     position: "top-end",
                     title:"Abriendo CV!",
                     icon:"success",
@@ -83,8 +90,8 @@ const Perfil = () => {
                 });
             } else if (result.isDenied) {
                 Swal.fire({
-                    background:"#00081B",
-                    color:"#F1622B",
+                    background: Colors.Blue,
+                    color: Colors.Orange,
                     position: "top-end",
                     title:"Descargando CV!",
                     icon:"info",
@@ -104,14 +111,16 @@ const Perfil = () => {
             variant='elevated'
             size='lg'
             alignItems='center'
-            backgroundColor='#254168'
-            border='1px solid #F1622B'
+            backgroundColor={Colors.BlueLight}
+            border="1px solid"
+            borderColor ={Colors.Orange}
+            px ="3"
         >
             <Avatar
                 size='2xl'
                 borderRadius='full'
                 showBorder='true'
-                borderColor='#F1622B'
+                borderColor={Colors.Orange}
                 name='Cosentino Fernando'
                 src='perfil.png'
                 mx='4'
@@ -119,30 +128,29 @@ const Perfil = () => {
 
             <Stack>
                 <CardBody>
-                    <Heading size='xl' color='#F1622B'>Cosentino Fernando</Heading>
-                    <Text fontSize='lg' py='2' color='#FF9E4D'>
-                        Analista de sistemas
-                    </Text>
+                    <Heading size='xl' color={Colors.Orange}>Cosentino Fernando</Heading>
+                    <Text fontSize='lg' py='2' color={Colors.OrangeLight}>Analista de sistemas</Text>
                     <Wrap>
                         <WrapItem>
-                            <Button variant='unstyled' onClick={goMyLinkedinProfile}>
-                                <FontAwesomeIcon icon={faLinkedinIn} size='xl' />
+                            <Button variant='unstyled' onClick={goMyLinkedinProfile} onMouseEnter={() => setIsHoveredLinkedin(true)} onMouseLeave={() => setIsHoveredLinkedin(false)}>
+                                <FontAwesomeIcon icon={faLinkedinIn} size='xl' style={{color: Colors.White,}} {...(isHoveredLinkedin && { bounce: true })}/>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' onClick={goMyGitHubProfile}>
-                                <FontAwesomeIcon icon={faGithub} size='xl' />
+                            <Button variant='unstyled' onClick={goMyGitHubProfile} onMouseEnter={() => setIsHoveredGitHub(true)} onMouseLeave={() => setIsHoveredGitHub(false)}>
+                                <FontAwesomeIcon icon={faGithub} size='xl' style={{color: Colors.White,}} {...(isHoveredGitHub && { bounce: true })}/>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' onClick={sendMeAEmail}>
-                                <FontAwesomeIcon icon={faEnvelope} size='xl' />
+                            <Button variant='unstyled' onClick={sendMeAEmail} onMouseEnter={() => setIsHoveredEmail(true)} onMouseLeave={() => setIsHoveredEmail(false)}>
+                                <FontAwesomeIcon icon={faEnvelope} size='xl' style={{color: Colors.White,}} {...(isHoveredEmail && { bounce: true })}/>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' onClick={showMyResume}>
-                                <FontAwesomeIcon icon={faFile} size='xl'/>
+                            <Button variant='unstyled' onClick={showMyResume} onMouseEnter={() => setIsHoveredCV(true)} onMouseLeave={() => setIsHoveredCV(false)}>
+                                <FontAwesomeIcon icon={faFile} size='xl'style={{color: Colors.White,}} {...(isHoveredCV && { bounce: true })}/>
                             </Button>
+                            
                         </WrapItem>
                     </Wrap>
                 </CardBody>

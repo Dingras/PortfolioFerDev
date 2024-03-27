@@ -4,11 +4,12 @@ import SobreMi from './components/SobreMi/SobreMi'
 import Formacion from './components/Formacion/Formacion'
 import Proyectos from './components/Proyectos/Proyectos'
 import Experiencia from './components/Experiencia/Experiencia'
+import Colors from './constants/Colors'
 
 function App() {
 
     return (
-        <Box bg='#00081B'>
+        <Box bg={Colors.Blue}>
             <Perfil/>
             <SobreMi/>
             <Formacion/>
