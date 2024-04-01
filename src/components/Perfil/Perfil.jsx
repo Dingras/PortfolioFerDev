@@ -132,22 +132,22 @@ const Perfil = () => {
                     <Text fontSize='lg' py='2' color={Colors.OrangeLight}>Analista de sistemas</Text>
                     <Wrap>
                         <WrapItem>
-                            <Button variant='unstyled' onClick={goMyLinkedinProfile} onMouseEnter={() => setIsHoveredLinkedin(true)} onMouseLeave={() => setIsHoveredLinkedin(false)}>
+                            <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={goMyLinkedinProfile} onMouseEnter={() => setIsHoveredLinkedin(true)} onMouseLeave={() => setIsHoveredLinkedin(false)}>
                                 <FontAwesomeIcon icon={faLinkedinIn} size='xl' style={{color: Colors.White,}} {...(isHoveredLinkedin && { bounce: true })}/>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' onClick={goMyGitHubProfile} onMouseEnter={() => setIsHoveredGitHub(true)} onMouseLeave={() => setIsHoveredGitHub(false)}>
+                            <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={goMyGitHubProfile} onMouseEnter={() => setIsHoveredGitHub(true)} onMouseLeave={() => setIsHoveredGitHub(false)}>
                                 <FontAwesomeIcon icon={faGithub} size='xl' style={{color: Colors.White,}} {...(isHoveredGitHub && { bounce: true })}/>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' onClick={sendMeAEmail} onMouseEnter={() => setIsHoveredEmail(true)} onMouseLeave={() => setIsHoveredEmail(false)}>
+                            <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={sendMeAEmail} onMouseEnter={() => setIsHoveredEmail(true)} onMouseLeave={() => setIsHoveredEmail(false)}>
                                 <FontAwesomeIcon icon={faEnvelope} size='xl' style={{color: Colors.White,}} {...(isHoveredEmail && { bounce: true })}/>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' onClick={showMyResume} onMouseEnter={() => setIsHoveredCV(true)} onMouseLeave={() => setIsHoveredCV(false)}>
+                            <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={showMyResume} onMouseEnter={() => setIsHoveredCV(true)} onMouseLeave={() => setIsHoveredCV(false)}>
                                 <FontAwesomeIcon icon={faFile} size='xl'style={{color: Colors.White,}} {...(isHoveredCV && { bounce: true })}/>
                             </Button>
                             
