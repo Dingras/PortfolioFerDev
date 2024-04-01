@@ -1,6 +1,6 @@
 const Educacion = [
     {
-        "titulo": "Analista de sistemas",
+        "titulo": "Analista de sistemas.",
         "institucion": "Instituto Argentino de la Empresa (HILET).",
         "ciudad": "Mar del plata",
         "inicio": "04/2021",

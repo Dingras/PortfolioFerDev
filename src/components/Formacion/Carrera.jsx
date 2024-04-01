@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, Text, Flex } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, Text, SimpleGrid, Flex} from '@chakra-ui/react'
 import Colors from '../../constants/Colors'
 
 const Carrera = (props) => {
@@ -12,13 +12,11 @@ const Carrera = (props) => {
             py='4'
         >
             <CardHeader py='1'>
-                <Flex align='center'>
+                <SimpleGrid columns='1'>
                     <Text fontSize='lg' as='b' color={Colors.Orange} px='1'>{props.titulo}</Text>
-                    <Text fontSize='md' color={Colors.OrangeLight} px='1'>-</Text>
                     <Text fontSize='sm' color={Colors.OrangeLight} px='1'>{props.institucion}</Text>
-                    <Text fontSize='md' color={Colors.OrangeLight} px='1'>-</Text>
-                    <Text fontSize='sm' color={Colors.OrangeLight} px='1'>{props.ciudad}</Text>
-                </Flex>
+                    <Text fontSize='xs' color={Colors.OrangeLight} px='1'>{props.ciudad}</Text>
+                </SimpleGrid>
                 <Flex align='center'>
                     <Text fontSize='xs' as='b' color={Colors.OrangeLight} px='1'>{props.inicio}</Text>
                     <Text fontSize='xs' as='b' color={Colors.OrangeLight} px='1'>-</Text>

@@ -133,9 +133,9 @@ const Proyecto = (props) => {
                 <Card border="1px solid" borderColor={Colors.White} bg={Colors.Blue} mx='1'>
                     <ButtonGroup>
                         {
-                            props.tecnologias.map((tecnologia) => (
-                                <Button variant='unstyled' cursor="default" mx="1" style={{display: 'flex'}}>
-                                    <Image src={`icons/${tecnologia}.svg`} boxSize="1.5em" style={{ filter: 'brightness(0) invert(1)' }}/>
+                            props.tecnologias.map((tecnologia,index) => (
+                                <Button variant='unstyled' cursor="default" mx="1" style={{display: 'flex'}} key={index}>
+                                    <Image src={`icons/${tecnologia}.svg`} boxSize="1.5em" style={{ filter: 'brightness(0) invert(1)' }} title={tecnologia}/>
                                 </Button>
                             )
                             )

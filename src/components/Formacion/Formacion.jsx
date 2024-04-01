@@ -30,8 +30,9 @@ const Formacion = () => {
                     <Button bg={Colors.Blue} color={Colors.Orange} float='right' _hover={{ bg: Colors.Orange, color: Colors.Blue }}>Ver Mas</Button>
                 </Flex>
                 {
-                    carreras.map((carrera)=>(
+                    carreras.map((carrera,index)=>(
                         <Carrera
+                            key = {index}
                             titulo={carrera.titulo}
                             institucion = {carrera.institucion}
                             ciudad = {carrera.ciudad}
