@@ -6,6 +6,7 @@ body {
 :root {
     background-color: #00081B;
     padding: 2% 10%;
+    font-family: 'Ubuntu Mono', monospace;
 }
 
 @media only screen and (max-width: 700px) {
