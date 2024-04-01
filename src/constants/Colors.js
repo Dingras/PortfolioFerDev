@@ -4,6 +4,7 @@ const Colors = {
     'Orange' : "#F1622B",
     'OrangeLight':"#FF9E4D",
     'Error' : "#d33",
-    'White' : "#FFF"
+    'White' : "#FFF",
+    'Gray' : '#515151'
 }
 export default Colors

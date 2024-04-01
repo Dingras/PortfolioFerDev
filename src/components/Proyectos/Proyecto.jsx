@@ -102,13 +102,14 @@ const Proyecto = (props) => {
     }
 
     return (
-        <Card maxW='sm' bg={Colors.Blue} my="2" width='100%'>
+        <Card maxW='xxl' bg={Colors.Blue} my="2" width='100%'>
             <CardBody>
                 <Image
                     src={`img_apps/${props.url_img}`}
                     alt={props.titulo}
                     borderRadius='lg'
                     maxHeight='12em'
+                    mx='auto'
                 />
                 <Stack mt='6' spacing='3'>
                     <Heading size='md' color={Colors.Orange}>{props.titulo}</Heading>

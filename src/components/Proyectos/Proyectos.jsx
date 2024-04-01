@@ -21,7 +21,7 @@ const Proyectos = () => {
                     <Heading size='md' color={Colors.Orange} mb='2'>Proyectos:</Heading>
                     <Button bg={Colors.Blue} color={Colors.Orange} float='right' _hover={{ bg: Colors.Orange, color: Colors.Blue }}>Ver Mas</Button>
                 </Flex>
-                <SimpleGrid columns={{ base: 1, xl: 3 }} spacing='1em' justifyItems='center'>
+                <SimpleGrid columns={{ base: 1, xl: 3 }} spacing='10' justifyItems='center'>
                     {
                         Proyectos_Principales.map((proyecto)=>(
                                 <Proyecto
