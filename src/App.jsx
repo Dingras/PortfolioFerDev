@@ -12,8 +12,8 @@ function App() {
         <Box bg={Colors.Blue}>
             <Perfil/>
             <SobreMi/>
-            <Formacion/>
             <Proyectos/>
+            <Formacion/>
             <Experiencia/>
         </Box>
     )
