@@ -15,9 +15,6 @@ const Habilidad = (props) => {
             src={`img_habilidades/${props.tipo}/${props.habilidad}.png`}
             alt={props.habilidad}
             title={props.habilidad}
-            sx={{
-                filter:`drop-shadow(0 0 5px ${Colors.Gray})`
-            }}
         />
     )
 }
