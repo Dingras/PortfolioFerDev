@@ -15,23 +15,22 @@ function App() {
     <Box bg={Colors.Blue}>
         <Encabezado/>
             <Box
-                bg={Colors.Blue} // Esto es un ejemplo, ajusta el color según la paleta de Chakra UI
+                bg={Colors.Blue}
                 sx={{
-                    backgroundColor: '#00081B', // Para colores específicos que no están en la paleta de Chakra
-                    padding: { base: '2% 5%', md: '0% 10%' }, // Ajusta el padding basado en el breakpoint
+                    backgroundColor: '#00081B',
+                    padding: { base: '2% 5%', md: '0% 10%' },
                     fontFamily: "'Ubuntu Mono', monospace",
                         '@media only screen and (max-width: 700px)': {
-                            padding: '2% 5%', // Esto es redundante dada la línea anterior y se puede omitir
+                            padding: '2% 5%',
                     },
                 }}
             >
-                
                 <Perfil/>
                 <SobreMi/>
                 <Habilidades/>
                 <Proyectos/>
                 <Formacion/>
-                <Experiencia/>
+                {/* <Experiencia/> */}
             </Box>
             <Pie/>
     </Box>

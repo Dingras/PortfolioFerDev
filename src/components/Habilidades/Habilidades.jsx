@@ -5,6 +5,7 @@ import Colors from '../../constants/Colors'
 import Tipos from './Tipos'
 import { SimpleGrid } from '@chakra-ui/react'
 import DataBase from '../../constants/Habilidades/DataBase'
+import BackEnd from '../../constants/Habilidades/BackEnd'
 
 const Habilidades = () => {
 
@@ -19,6 +20,9 @@ const Habilidades = () => {
 
     const getTipo3 = () => {
         return DataBase
+    }
+    const getTipo4 = () => {
+        return BackEnd
     }
 
     return (
@@ -36,10 +40,10 @@ const Habilidades = () => {
             <CardBody>
             <Flex justify="space-between" align='center'>
                 <Heading size='md' color={Colors.Orange} mb='2'>Habilidades:</Heading>
-                <Button bg={Colors.Blue} color={Colors.Orange} float='right' _hover={{ bg: Colors.Orange, color: Colors.Blue }}>Ver Mas</Button>
+                {/*<Button bg={Colors.Blue} color={Colors.Orange} float='right' _hover={{ bg: Colors.Orange, color: Colors.Blue }}>Ver Mas</Button>*/}
             </Flex>
                 <SimpleGrid
-                    columns={{ base: 1, xl: 3 }}
+                    columns={{ base: 1, lg: 2, xl: 4 }}
                     justifyItems='center'
                     >
                     <Tipos
@@ -50,9 +54,13 @@ const Habilidades = () => {
                         tipo="Lenguajes"
                         habilidades={getTipo2()}
                         />
-                        <Tipos
+                    <Tipos
                         tipo="DataBase"
                         habilidades={getTipo3()}
+                        />
+                    <Tipos
+                        tipo="BackEnd"
+                        habilidades={getTipo4()}
                         />
                 </SimpleGrid>
             </CardBody>

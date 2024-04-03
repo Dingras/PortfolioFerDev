@@ -86,7 +86,7 @@ const Perfil = () => {
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
-                    window.open('/PortfolioFerDev/FernandoCosentinoCV.pdf', '_blank');
+                    window.open('https://docs.google.com/document/d/1ka48AMOn7OB01Kzs3MC4MAmjkRMjm0ggC3RnF0TcYms/edit?usp=sharing', '_blank');
                 });
             } else if (result.isDenied) {
                 Swal.fire({
@@ -98,7 +98,7 @@ const Perfil = () => {
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
-                    window.location.href = '/PortfolioFerDev/FernandoCosentinoCV.pdf';
+                    //window.location.href = '/PortfolioFerDev/FernandoCosentinoCV.pdf';
                 });
             }
         });

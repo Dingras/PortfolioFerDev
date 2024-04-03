@@ -27,7 +27,7 @@ const Formacion = () => {
             <CardBody>
                 <Flex justify="space-between" align='center'>
                     <Heading size='md' color={Colors.Orange}>Formación:</Heading>
-                    <Button bg={Colors.Blue} color={Colors.Orange} float='right' _hover={{ bg: Colors.Orange, color: Colors.Blue }}>Ver Mas</Button>
+                    {/*<Button bg={Colors.Blue} color={Colors.Orange} float='right' _hover={{ bg: Colors.Orange, color: Colors.Blue }}>Ver Mas</Button>*/}
                 </Flex>
                 {
                     carreras.map((carrera,index)=>(
