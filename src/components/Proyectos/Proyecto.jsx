@@ -123,10 +123,10 @@ const Proyecto = (props) => {
                 <Card border="1px solid" borderColor={Colors.White} bg={Colors.Blue} mx='1'>
                     <ButtonGroup>
                         <Button variant='unstyled' onClick={goGitHubRepo} onMouseEnter={() => setIsHoveredGitHub(true)} onMouseLeave={() => setIsHoveredGitHub(false)}>
-                            <FontAwesomeIcon icon={faGithub} size='xl' style={{ color: Colors.White, }} {...(isHoveredGitHub && { bounce: true })} />
+                            <FontAwesomeIcon icon={faGithub} size='xl' style={{ color: Colors.White, }} {...(isHoveredGitHub && { bounce: true })} title="..ir al código."/>
                         </Button>
                         <Button variant='unstyled' onClick={goApp} onMouseEnter={() => setIsHoveredDesktop(true)} onMouseLeave={() => setIsHoveredDesktop(false)}>
-                            <FontAwesomeIcon icon={faDesktop} size='xl' style={{ color: Colors.White, }} {...(isHoveredDesktop && { bounce: true })} />
+                            <FontAwesomeIcon icon={faDesktop} size='xl' style={{ color: Colors.White, }} {...(isHoveredDesktop && { bounce: true })} title="..ir a la aplicación."/>
                         </Button>
                     </ButtonGroup>
                 </Card>

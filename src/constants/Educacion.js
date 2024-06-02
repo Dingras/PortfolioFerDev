@@ -5,7 +5,7 @@ const Educacion = [
         "ciudad": "Mar del plata",
         "inicio": "04/2021",
         "finalizacion": "05/2024",
-        "descripcion": "Habilidades en programación, metodologías ágiles, manejo de redes.",
+        "descripcion": "Experiencia en desarrollo usando .NET, Principios SOLID, PHP, Codeigniter, HTML, CSS, JavaScript, React, SQL, normalización de base de datos, Java, POO,Spring Boot,  metodologías ágiles, manejo de redes y servidores Linux-Windows",
         "estado" : "Completado"
     },
     {
@@ -14,7 +14,7 @@ const Educacion = [
         "ciudad": "Mar del plata",
         "inicio": "04/2017",
         "finalizacion": "07/2017",
-        "descripcion": "Conocimiento técnico, manejo y mantenimiento de software y hardware.",
+        "descripcion": "Conocimientos técnicos y prácticos de manejo y mantenimiento de hardware y software. Instalaciones de red.",
         "estado" : "Completado"
     },
     {
