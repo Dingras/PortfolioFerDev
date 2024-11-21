@@ -3,6 +3,7 @@ import { Card, CardBody, Text, Heading } from '@chakra-ui/react'
 const SobreMi = () => {
     return (
         <Card
+            className='animate__animated animate__backInRight animate__fast'
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
             variant='elevated'
@@ -13,11 +14,11 @@ const SobreMi = () => {
             my='1em'
         >
             <CardBody>
-                <Heading size='md' color='#F1622B'>Acerca de mí:</Heading>
-                <Text fontSize='md' py='2' color='#FF9E4D'>
-                    Hola, mi nombre es Fernando y soy un analista de sistemas con una formación avanzada en ingeniería.
-                    Tengo experiencia en el dominio del hardware, conocimientos de programación, bases de datos, redes, sistemas operativos y metodologías ágiles.
-                    Me interesa trabajar en el backend y en el lenguaje Python, aunque disfruto de todas las ramas de la programación.
+                {/* <Heading size='md' color='#F1622B'>Acerca de mí:</Heading> */}
+                <Text fontSize='lg' py='2' color='#FF9E4D'>
+                    Analista de Sistemas y Desarrollador Backend Python.
+                    Experto en Django, bases de datos, redes y sistemas operativos,
+                    creando soluciones ágiles y escalables.
                 </Text>
             </CardBody>
         </Card>

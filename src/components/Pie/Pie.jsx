@@ -1,8 +1,11 @@
-import { Center, Heading, Button} from '@chakra-ui/react'
+import { Center, Heading, Link} from '@chakra-ui/react'
 import Colors from '../../constants/Colors'
 import Links from '../../constants/Links'
 
 const Pie = () => {
+
+    const year = new Date().getFullYear()
+
     return (
         <Center
             py="1em"
@@ -13,16 +16,17 @@ const Pie = () => {
         >
             <Heading
                 color={Colors.OrangeLight}
-                size='1em'
+                size='sm'
             >
-                Pagina creada por {
-                    <Button
-                        variant='link'
-                        color={Colors.Orange}
+                Copyright © {year} - Pagina creada por {
+                    <Link
                         href={Links.github}
+                        color={Colors.Orange}
+                        isExternal
+                        fontWeight="bold"
                     >
                         @Dingras
-                    </Button>
+                    </Link>
                 } 
             </Heading>
         </Center>

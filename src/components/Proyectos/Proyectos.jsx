@@ -6,6 +6,7 @@ import Proyectos_Principales from '../../constants/ProyectosPricipales'
 const Proyectos = () => {
     return (
         <Card
+            className='animate__animated animate__backInRight animate__fast'
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
             variant='elevated'

@@ -86,7 +86,7 @@ const Perfil = () => {
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
-                    window.open('https://docs.google.com/document/d/1ka48AMOn7OB01Kzs3MC4MAmjkRMjm0ggC3RnF0TcYms/edit?usp=sharing', '_blank');
+                    window.open('https://docs.google.com/document/d/13vfgvYV7-fqaCsBzVsgNyuQDLp5L9wMlXXk_OLzv7iA/edit?usp=sharing', '_blank');
                 });
             } else if (result.isDenied) {
                 Swal.fire({
@@ -106,6 +106,7 @@ const Perfil = () => {
 
     return (
         <Card
+            className='animate__animated animate__backInLeft animate__faster'
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
             variant='elevated'
