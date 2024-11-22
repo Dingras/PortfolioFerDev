@@ -98,7 +98,7 @@ const Perfil = () => {
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
-                    window.location.href = '/PortfolioFerDev/FernandoCosentinoCV.pdf';
+                    window.location.href = 'FernandoCosentinoCV.pdf';
                 });
             }
         });
