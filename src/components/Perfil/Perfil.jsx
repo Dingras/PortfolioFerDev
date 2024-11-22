@@ -123,7 +123,7 @@ const Perfil = () => {
                 showBorder='true'
                 borderColor={Colors.Orange}
                 name='Cosentino Fernando'
-                src='perfil.png'
+                src='perfil.webp'
                 mx='4'
             />
 
