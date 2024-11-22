@@ -27,7 +27,7 @@ const Habilidades = () => {
 
     return (
         <Card
-            className='animate__animated animate__backInLeft animate__faster'
+            className='animate__animated animate__backInLeft animate__fast'
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
             variant='elevated'

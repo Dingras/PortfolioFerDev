@@ -13,16 +13,14 @@ function App() {
 
     return (
     <Box bg={Colors.Blue}>
-        <Encabezado/>
+        <Encabezado />
             <Box
                 bg={Colors.Blue}
                 sx={{
                     backgroundColor: '#00081B',
                     padding: { base: '2% 5%', md: '0% 10%' },
+                    paddingTop: { base: '100px', md: '100px'},
                     fontFamily: "'Ubuntu Mono', monospace",
-                        '@media only screen and (max-width: 700px)': {
-                            padding: '2% 5%',
-                    },
                 }}
             >
                 <Perfil/>

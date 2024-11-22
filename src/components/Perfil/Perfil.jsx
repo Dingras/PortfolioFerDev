@@ -98,7 +98,7 @@ const Perfil = () => {
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
-                    //window.location.href = '/PortfolioFerDev/FernandoCosentinoCV.pdf';
+                    window.location.href = '/PortfolioFerDev/FernandoCosentinoCV.pdf';
                 });
             }
         });
@@ -106,7 +106,7 @@ const Perfil = () => {
 
     return (
         <Card
-            className='animate__animated animate__backInLeft animate__faster'
+            className='animate__animated animate__backInLeft animate__fast'
             direction={{ base: 'column', sm: 'row' }}
             overflow='hidden'
             variant='elevated'

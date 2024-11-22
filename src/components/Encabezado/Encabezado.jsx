@@ -10,6 +10,9 @@ const Encabezado = () => {
         borderBottom="1px"
         borderColor={Colors.Orange}
         bg={Colors.Blue}
+        width={"100%"}
+        zIndex={1}
+        position={"fixed"}
         >
             <Avatar 
                 className='animate__animated animate__zoomIn animate__slow'
