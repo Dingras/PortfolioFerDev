@@ -8,16 +8,22 @@ import Colors from './constants/Colors'
 import Habilidades from './components/Habilidades/Habilidades'
 import Encabezado from './components/Encabezado/Encabezado'
 import Pie from './components/Pie/Pie'
+import { useColorModeValue } from '@chakra-ui/react';
 
 function App() {
 
+    const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
+    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+    const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
+
     return (
-    <Box bg={Colors.Blue}>
+    <Box bg={primary}>
         <Encabezado />
             <Box
-                bg={Colors.Blue}
+                bg={primary}
                 sx={{
-                    backgroundColor: '#00081B',
+                    backgroundColor: {primary},
                     padding: { base: '2% 5%', md: '0% 10%' },
                     paddingTop: { base: '100px', md: '100px'},
                     fontFamily: "'Ubuntu Mono', monospace",

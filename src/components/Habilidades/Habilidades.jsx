@@ -6,9 +6,14 @@ import Tipos from './Tipos'
 import { SimpleGrid } from '@chakra-ui/react'
 import DataBase from '../../constants/Habilidades/DataBase'
 import BackEnd from '../../constants/Habilidades/BackEnd'
+import { useColorModeValue } from '@chakra-ui/react';
 
 const Habilidades = () => {
 
+    const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
+    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+    const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
 
     const getTipo1 = () => {
         return FrontEnd
@@ -33,14 +38,14 @@ const Habilidades = () => {
             variant='elevated'
             size='lg'
             alignItems='center'
-            backgroundColor={Colors.BlueLight}
+            backgroundColor={secondary}
             border='1px solid'
-            borderColor={Colors.Orange}
+            borderColor={noPrimary}
             my='1em'
         >
             <CardBody>
             <Flex justify="space-between" align='center'>
-                <Heading size='md' color={Colors.Orange} mb='2'>Habilidades:</Heading>
+                <Heading size='md' color={noPrimary} mb='2'>Habilidades:</Heading>
                 {/*<Button bg={Colors.Blue} color={Colors.Orange} float='right' _hover={{ bg: Colors.Orange, color: Colors.Blue }}>Ver Mas</Button>*/}
             </Flex>
                 <SimpleGrid

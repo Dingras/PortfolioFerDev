@@ -1,17 +1,36 @@
-import { Avatar, Box } from '@chakra-ui/react'
+import { Avatar, Box, Button, Switch } from '@chakra-ui/react'
 import Colors from '../../constants/Colors'
+import { useState } from 'react';
+import { useColorMode, useColorModeValue } from '@chakra-ui/react';
 
 const Encabezado = () => {
+    const [isChecked, setIsChecked] = useState(false);
+    const { colorMode, toggleColorMode } = useColorMode();
+
+    const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
+    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+    const noSecondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+
+
+    const ColorModeControl = ()=>{
+      setIsChecked(!isChecked)
+      toggleColorMode()
+    }
+
     return (
         <Box
         py="1em"
-        pl="1em"
+        px="1em"
         mb= "1em"
         borderBottom="1px"
-        borderColor={Colors.Orange}
-        bg={Colors.Blue}
+        borderColor={noPrimary}
+        bg={primary}
         width={"100%"}
         zIndex={1}
+        display='flex'
+        alignItems='center'
+        justifyContent='space-between'
         position={"fixed"}
         >
             <Avatar 
@@ -19,10 +38,23 @@ const Encabezado = () => {
                 size='md'
                 borderRadius='full'
                 showBorder='true'
-                borderColor={Colors.Orange}
+                borderColor={noPrimary}
                 name='Cosentino Fernando'
                 src='favicon.ico'
                 
+            />
+            <Switch 
+                isChecked={isChecked}
+                onChange={ColorModeControl}
+                size="lg"
+                sx={{
+                  '.chakra-switch__track': {
+                    bg: isChecked ? Colors.BlueLight : Colors.Blue,
+                  },
+                  '.chakra-switch__thumb': {
+                    bg: !isChecked ? Colors.Orange : Colors.OrangeLight,
+                  },
+                }}
             />
         </Box>
     )

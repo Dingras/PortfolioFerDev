@@ -7,8 +7,14 @@ import { faEnvelope, faFile } from '@fortawesome/free-solid-svg-icons';
 import Links from '../../constants/Links'
 import Colors from '../../constants/Colors'
 import Swal from 'sweetalert2'
+import { useColorModeValue } from '@chakra-ui/react';
 
 const Perfil = () => {
+
+    const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
+    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+    const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
 
     const [isHoveredGitHub, setIsHoveredGitHub] = useState(false);
     const [isHoveredLinkedin, setIsHoveredLinkedin] = useState(false);
@@ -112,16 +118,16 @@ const Perfil = () => {
             variant='elevated'
             size='lg'
             alignItems='center'
-            backgroundColor={Colors.BlueLight}
+            backgroundColor={secondary}
             border="1px solid"
-            borderColor ={Colors.Orange}
+            borderColor ={noPrimary}
             px ="3"
         >
             <Avatar
                 size='2xl'
                 borderRadius='full'
                 showBorder='true'
-                borderColor={Colors.Orange}
+                borderColor={noPrimary}
                 name='Cosentino Fernando'
                 src='perfil.webp'
                 mx='4'
@@ -129,8 +135,8 @@ const Perfil = () => {
 
             <Stack>
                 <CardBody>
-                    <Heading size='xl' color={Colors.Orange}>Cosentino Fernando</Heading>
-                    <Text fontSize='lg' py='2' color={Colors.OrangeLight}>Analista de sistemas</Text>
+                    <Heading size='xl' color={noPrimary}>Cosentino Fernando</Heading>
+                    <Text fontSize='lg' py='2' color={noSecondary}>Analista de sistemas</Text>
                     <Wrap>
                         <WrapItem>
                             <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={goMyLinkedinProfile} onMouseEnter={() => setIsHoveredLinkedin(true)} onMouseLeave={() => setIsHoveredLinkedin(false)}>

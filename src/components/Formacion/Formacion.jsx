@@ -5,9 +5,16 @@ import Educacion from '../../constants/Educacion'
 import Certificados from '../../constants/Certificados'
 import Colors from '../../constants/Colors'
 import Certificado from './Certificado'
+import { useColorModeValue } from '@chakra-ui/react';
+
 
 const Formacion = () => {
 
+    const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
+    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+    const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
+    
     const [carreras, setCarreras] = useState([])
     const [cursos, setCursos] = useState([])
 
@@ -24,14 +31,14 @@ const Formacion = () => {
             variant='elevated'
             size='lg'
             alignItems='center'
-            backgroundColor={Colors.BlueLight}
+            backgroundColor={secondary}
             border='1px solid'
-            borderColor={Colors.Orange}
+            borderColor={noPrimary}
             my='1em'
         >
             <CardBody>
                 <Flex justify="space-between" align='center'>
-                    <Heading size='md' color={Colors.Orange}>Formación:</Heading>
+                    <Heading size='md' color={noPrimary}>Formación:</Heading>
                 </Flex>
                 {
                     carreras.map((carrera,index)=>(
@@ -48,7 +55,7 @@ const Formacion = () => {
                     ))
                 }
                 <Flex justify="space-between" align='center'>
-                    <Heading size='md' color={Colors.Orange}>Certificados:</Heading>
+                    <Heading size='md' color={noPrimary}>Certificados:</Heading>
                 </Flex>
                 {
                     cursos.map((certificado,index)=>(

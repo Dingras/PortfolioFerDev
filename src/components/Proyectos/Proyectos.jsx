@@ -2,8 +2,15 @@ import { Card, CardBody, Flex, Button, Heading, SimpleGrid, Center } from '@chak
 import Proyecto from './Proyecto'
 import Colors from '../../constants/Colors'
 import Proyectos_Principales from '../../constants/ProyectosPricipales'
+import { useColorModeValue } from '@chakra-ui/react';
 
 const Proyectos = () => {
+
+    const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
+    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+    const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
+
     return (
         <Card
             className='animate__animated animate__backInRight animate__fast'
@@ -12,14 +19,14 @@ const Proyectos = () => {
             variant='elevated'
             size='lg'
             alignItems='center'
-            backgroundColor={Colors.BlueLight}
+            backgroundColor={secondary}
             border='1px solid'
-            borderColor={Colors.Orange}
+            borderColor={noPrimary}
             my='1em'
         >
             <CardBody>
                 <Flex justify="space-between" align='center'>
-                    <Heading size='md' color={Colors.Orange} mb='2'>Proyectos:</Heading>
+                    <Heading size='md' color={noPrimary} mb='2'>Proyectos:</Heading>
                     {/*<Button bg={Colors.Blue} color={Colors.Orange} float='right' _hover={{ bg: Colors.Orange, color: Colors.Blue }}>Ver Mas</Button>*/}
                 </Flex>
                 <SimpleGrid columns={{ base: 1, xl: 3 }} spacing='10' justifyItems='center'>

@@ -4,12 +4,18 @@ import { faPython, faReact, faPhp, faGithub } from "@fortawesome/free-brands-svg
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 import Colors from "../../constants/Colors"
 import Swal from 'sweetalert2'
+import { useColorModeValue } from '@chakra-ui/react';
+
 import { useState } from "react"
 
 const Proyecto = (props) => {
 
     const [isHoveredGitHub, setIsHoveredGitHub] = useState(false);
     const [isHoveredDesktop, setIsHoveredDesktop] = useState(false);
+    const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
+    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+    const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
 
     const goGitHubRepo = () => {
         Swal.fire({
@@ -102,7 +108,7 @@ const Proyecto = (props) => {
     }
 
     return (
-        <Card maxW='xxl' bg={Colors.Blue} my="2" width='100%'>
+        <Card maxW='xxl' bg={primary} my="2" width='100%'>
             <CardBody>
                 <Image
                     src={`img_apps/${props.url_img}`}
@@ -112,15 +118,15 @@ const Proyecto = (props) => {
                     mx='auto'
                 />
                 <Stack mt='6' spacing='3'>
-                    <Heading size='md' color={Colors.Orange}>{props.titulo}</Heading>
-                    <Text color={Colors.OrangeLight}>
+                    <Heading size='md' color={noPrimary}>{props.titulo}</Heading>
+                    <Text color={noSecondary}>
                         {props.descripcion}
                     </Text>
                 </Stack>
             </CardBody>
             <Divider />
             <CardFooter justify='space-between'>
-                <Card border="1px solid" borderColor={Colors.White} bg={Colors.Blue} mx='1'>
+                <Card border="1px solid" borderColor={Colors.White} bg={primary} mx='1'>
                     <ButtonGroup>
                         <Button variant='unstyled' onClick={goGitHubRepo} onMouseEnter={() => setIsHoveredGitHub(true)} onMouseLeave={() => setIsHoveredGitHub(false)}>
                             <FontAwesomeIcon icon={faGithub} size='xl' style={{ color: Colors.White, }} {...(isHoveredGitHub && { bounce: true })} title="..ir al código."/>
@@ -131,7 +137,7 @@ const Proyecto = (props) => {
                     </ButtonGroup>
                 </Card>
 
-                <Card border="1px solid" borderColor={Colors.White} bg={Colors.Blue} mx='1'>
+                <Card border="1px solid" borderColor={Colors.White} bg={primary} mx='1'>
                     <ButtonGroup>
                         {
                             props.tecnologias.map((tecnologia,index) => (

@@ -1,14 +1,19 @@
 import { SimpleGrid, Text, Box, Card, CardBody, Image } from "@chakra-ui/react"
 import Colors from '../../constants/Colors'
+import { useColorModeValue } from '@chakra-ui/react';
 
 
 const Certificado = (props) => {
+    const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
+    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
+    const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
   return (
     <Card 
         flexDirection={{ base: "column-reverse", md: "row" }}
         overflow="hidden"
         maxW="100%"
-        backgroundColor={Colors.Blue}
+        backgroundColor={primary}
         my='1em'
     >
         <Image
@@ -22,10 +27,10 @@ const Certificado = (props) => {
         >
             <CardBody>
                 <SimpleGrid columns='1'>
-                    <Text fontSize='lg' as='b' color={Colors.Orange} px='1'>{props.titulo}</Text>
-                    <Text fontSize='sm' as='b' color={Colors.OrangeLight} px='1'>{props.institucion}</Text>
+                    <Text fontSize='lg' as='b' color={noPrimary} px='1'>{props.titulo}</Text>
+                    <Text fontSize='sm' as='b' color={noSecondary} px='1'>{props.institucion}</Text>
                 </SimpleGrid>
-                <Text fontSize='md' color={Colors.OrangeLight} px='1'>{props.descripcion}</Text>
+                <Text fontSize='md' color={noSecondary} px='1'>{props.descripcion}</Text>
             </CardBody>
         </Box>
     </Card>
