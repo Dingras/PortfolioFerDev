@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useColorMode, useColorModeValue } from '@chakra-ui/react';
 
 const Encabezado = () => {
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(true);
     const { colorMode, toggleColorMode } = useColorMode();
 
     const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
