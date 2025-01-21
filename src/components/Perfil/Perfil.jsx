@@ -92,7 +92,7 @@ const Perfil = () => {
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
-                    window.open('https://docs.google.com/document/d/13vfgvYV7-fqaCsBzVsgNyuQDLp5L9wMlXXk_OLzv7iA/edit?usp=sharing', '_blank');
+                    window.open('https://docs.google.com/document/d/1w1ftX9k20Z18c1tZLxObqAtc5jnqcpUA2oBCY9ozNTE/edit?usp=sharing', '_blank');
                 });
             } else if (result.isDenied) {
                 Swal.fire({
