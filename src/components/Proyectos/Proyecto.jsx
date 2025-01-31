@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, Button, ButtonGroup, Icon } from "@chakra-ui/react"
+import { Card, CardBody, CardFooter, Image, Stack, Heading, Text, Divider, Button, ButtonGroup, Icon, Box } from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPython, faReact, faPhp, faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +13,7 @@ const Proyecto = (props) => {
     const [isHoveredGitHub, setIsHoveredGitHub] = useState(false);
     const [isHoveredDesktop, setIsHoveredDesktop] = useState(false);
     const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
-    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const noPrimary = useColorModeValue(Colors.Orange, Colors.OrangeLight)
     const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
     const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
 
@@ -114,9 +114,12 @@ const Proyecto = (props) => {
                     src={`img_apps/${props.url_img}`}
                     alt={props.titulo}
                     borderRadius='lg'
-                    maxHeight='12em'
+                    // maxHeight='12em'
+                    width='100%'
                     mx='auto'
+                    objectFit='contain'
                 />
+
                 <Stack mt='6' spacing='3'>
                     <Heading size='md' color={noPrimary}>{props.titulo}</Heading>
                     <Text color={noSecondary}>
@@ -129,10 +132,10 @@ const Proyecto = (props) => {
                 <Card border="1px solid" borderColor={Colors.White} bg={primary} mx='1'>
                     <ButtonGroup>
                         <Button variant='unstyled' onClick={goGitHubRepo} onMouseEnter={() => setIsHoveredGitHub(true)} onMouseLeave={() => setIsHoveredGitHub(false)}>
-                            <FontAwesomeIcon icon={faGithub} size='xl' style={{ color: Colors.White, }} {...(isHoveredGitHub && { bounce: true })} title="..ir al código."/>
+                            <FontAwesomeIcon icon={faGithub} size='xl' style={{ color: Colors.White, }} {...(isHoveredGitHub && { bounce: true })} title="..ir al código." />
                         </Button>
                         <Button variant='unstyled' onClick={goApp} onMouseEnter={() => setIsHoveredDesktop(true)} onMouseLeave={() => setIsHoveredDesktop(false)}>
-                            <FontAwesomeIcon icon={faDesktop} size='xl' style={{ color: Colors.White, }} {...(isHoveredDesktop && { bounce: true })} title="..ir a la aplicación."/>
+                            <FontAwesomeIcon icon={faDesktop} size='xl' style={{ color: Colors.White, }} {...(isHoveredDesktop && { bounce: true })} title="..ir a la aplicación." />
                         </Button>
                     </ButtonGroup>
                 </Card>
@@ -140,9 +143,9 @@ const Proyecto = (props) => {
                 <Card border="1px solid" borderColor={Colors.White} bg={primary} mx='1'>
                     <ButtonGroup>
                         {
-                            props.tecnologias.map((tecnologia,index) => (
-                                <Button variant='unstyled' cursor="default" mx="1" style={{display: 'flex'}} key={index}>
-                                    <Image src={`icons/${tecnologia}.svg`} boxSize="1.5em" style={{ filter: 'brightness(0) invert(1)' }} title={tecnologia}/>
+                            props.tecnologias.map((tecnologia, index) => (
+                                <Button variant='unstyled' cursor="default" mx="1" style={{ display: 'flex' }} key={index}>
+                                    <Image src={`icons/${tecnologia}.svg`} boxSize="1.5em" style={{ filter: 'brightness(0) invert(1)' }} title={tecnologia} />
                                 </Button>
                             )
                             )

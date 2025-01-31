@@ -31,8 +31,8 @@ function App() {
             >
                 <Perfil/>
                 <SobreMi/>
-                <Habilidades/>
                 <Proyectos/>
+                <Habilidades/>
                 <Formacion/>
                 {/* <Experiencia/> */}
             </Box>

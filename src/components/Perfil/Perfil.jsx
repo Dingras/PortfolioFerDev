@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Card, Stack, Heading, Text, Button, CardBody, Wrap, WrapItem } from '@chakra-ui/react'
+import { Card, Stack, Heading, Text, Button, CardBody, Wrap, WrapItem, Box } from '@chakra-ui/react'
 import { Avatar } from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -12,7 +12,7 @@ import { useColorModeValue } from '@chakra-ui/react';
 const Perfil = () => {
 
     const primary = useColorModeValue(Colors.Blue, Colors.BlueLight)
-    const noPrimary = useColorModeValue(Colors.Orange,Colors.OrangeLight)
+    const noPrimary = useColorModeValue(Colors.Orange, Colors.OrangeLight)
     const secondary = useColorModeValue(Colors.BlueLight, Colors.Blue)
     const noSecondary = useColorModeValue(Colors.OrangeLight, Colors.Orange)
 
@@ -29,7 +29,7 @@ const Perfil = () => {
     }
     const sendMeAEmail = () => {
         Swal.fire({
-            background:Colors.Blue,
+            background: Colors.Blue,
             title: Links.email,
             text: "Esta es mi direccion de correo",
             color: Colors.Orange,
@@ -37,18 +37,18 @@ const Perfil = () => {
             showCancelButton: true,
             confirmButtonColor: Colors.BlueLight,
             denyButtonColor: Colors.Orange,
-            cancelButtonColor:Colors.Error,
+            cancelButtonColor: Colors.Error,
             confirmButtonText: "Copiar mi direccion",
             denyButtonText: `Enviar un correo`,
-            cancelButtonText:"Cancelar"
+            cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
                     background: Colors.Blue,
                     color: Colors.Orange,
                     position: "top-end",
-                    title:"Correo copiado!",
-                    icon:"success",
+                    title: "Correo copiado!",
+                    icon: "success",
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
@@ -59,8 +59,8 @@ const Perfil = () => {
                     background: Colors.Blue,
                     color: Colors.Orange,
                     position: "top-end",
-                    title:"Abriendo tu correo!",
-                    icon:"info",
+                    title: "Abriendo tu correo!",
+                    icon: "info",
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
@@ -72,7 +72,7 @@ const Perfil = () => {
     const showMyResume = () => {
         Swal.fire({
             background: Colors.Blue,
-            icon:"question",
+            icon: "question",
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonColor: Colors.BlueLight,
@@ -80,15 +80,15 @@ const Perfil = () => {
             cancelButtonColor: Colors.Error,
             confirmButtonText: "Ver CV",
             denyButtonText: "Descargar CV",
-            cancelButtonText:"Cancelar"
+            cancelButtonText: "Cancelar"
         }).then((result) => {
             if (result.isConfirmed) {
                 Swal.fire({
                     background: Colors.Blue,
                     color: Colors.Orange,
                     position: "top-end",
-                    title:"Abriendo CV!",
-                    icon:"success",
+                    title: "Abriendo CV!",
+                    icon: "success",
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
@@ -99,8 +99,8 @@ const Perfil = () => {
                     background: Colors.Blue,
                     color: Colors.Orange,
                     position: "top-end",
-                    title:"Descargando CV!",
-                    icon:"info",
+                    title: "Descargando CV!",
+                    icon: "info",
                     showConfirmButton: false,
                     timer: 1000
                 }).then(() => {
@@ -120,8 +120,8 @@ const Perfil = () => {
             alignItems='center'
             backgroundColor={secondary}
             border="1px solid"
-            borderColor ={noPrimary}
-            px ="3"
+            borderColor={noPrimary}
+            px="3"
         >
             <Avatar
                 size='2xl'
@@ -139,25 +139,28 @@ const Perfil = () => {
                     <Text fontSize='lg' py='2' color={noSecondary}>Analista de sistemas</Text>
                     <Wrap>
                         <WrapItem>
-                            <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={goMyLinkedinProfile} onMouseEnter={() => setIsHoveredLinkedin(true)} onMouseLeave={() => setIsHoveredLinkedin(false)}>
-                                <FontAwesomeIcon icon={faLinkedinIn} size='xl' style={{color: Colors.White,}} {...(isHoveredLinkedin && { bounce: true })}/>
+                            <Button variant='unstyled' border="1px" px="0.5em" textColor={Colors.White} letterSpacing="2px" borderColor={Colors.White} onClick={goMyLinkedinProfile} onMouseEnter={() => setIsHoveredLinkedin(true)} onMouseLeave={() => setIsHoveredLinkedin(false)}>
+                                <FontAwesomeIcon icon={faLinkedinIn} size='xl' style={{ color: Colors.White, }} {...(isHoveredLinkedin && { bounce: true })} />
+                                <Box as="span" display={{ base: "none", md: "inline" }}> LinkedIn</Box>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={goMyGitHubProfile} onMouseEnter={() => setIsHoveredGitHub(true)} onMouseLeave={() => setIsHoveredGitHub(false)}>
-                                <FontAwesomeIcon icon={faGithub} size='xl' style={{color: Colors.White,}} {...(isHoveredGitHub && { bounce: true })}/>
+                            <Button variant='unstyled' border="1px" px="0.5em" textColor={Colors.White} letterSpacing="2px" borderColor={Colors.White} onClick={goMyGitHubProfile} onMouseEnter={() => setIsHoveredGitHub(true)} onMouseLeave={() => setIsHoveredGitHub(false)}>
+                                <FontAwesomeIcon icon={faGithub} size='xl' style={{ color: Colors.White, }} {...(isHoveredGitHub && { bounce: true })} />
+                                <Box as="span" display={{ base: "none", md: "inline" }}> GitHub</Box>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={sendMeAEmail} onMouseEnter={() => setIsHoveredEmail(true)} onMouseLeave={() => setIsHoveredEmail(false)}>
-                                <FontAwesomeIcon icon={faEnvelope} size='xl' style={{color: Colors.White,}} {...(isHoveredEmail && { bounce: true })}/>
+                            <Button variant='unstyled' border="1px" px="0.5em" textColor={Colors.White} letterSpacing="2px" borderColor={Colors.White} onClick={sendMeAEmail} onMouseEnter={() => setIsHoveredEmail(true)} onMouseLeave={() => setIsHoveredEmail(false)}>
+                                <FontAwesomeIcon icon={faEnvelope} size='xl' style={{ color: Colors.White, }} {...(isHoveredEmail && { bounce: true })} />
+                                <Box as="span" display={{ base: "none", md: "inline" }}> Email</Box>
                             </Button>
                         </WrapItem>
                         <WrapItem>
-                            <Button variant='unstyled' border="1px" borderColor ={Colors.White} onClick={showMyResume} onMouseEnter={() => setIsHoveredCV(true)} onMouseLeave={() => setIsHoveredCV(false)}>
-                                <FontAwesomeIcon icon={faFile} size='xl'style={{color: Colors.White,}} {...(isHoveredCV && { bounce: true })}/>
+                            <Button variant='unstyled' border="1px" px="0.5em" textColor={Colors.White} letterSpacing="2px" borderColor={Colors.White} onClick={showMyResume} onMouseEnter={() => setIsHoveredCV(true)} onMouseLeave={() => setIsHoveredCV(false)}>
+                                <FontAwesomeIcon icon={faFile} size='xl' style={{ color: Colors.White, }} {...(isHoveredCV && { bounce: true })} />
+                                <Box as="span" display={{ base: "none", md: "inline" }}> Mi CV</Box>
                             </Button>
-                            
                         </WrapItem>
                     </Wrap>
                 </CardBody>
