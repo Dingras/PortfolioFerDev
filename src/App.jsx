@@ -4,6 +4,7 @@ import SobreMi from './components/SobreMi/SobreMi'
 import Formacion from './components/Formacion/Formacion'
 import Proyectos from './components/Proyectos/Proyectos'
 import Experiencia from './components/Experiencia/Experiencia'
+import Bot from './components/Bot/Bot'
 import Colors from './constants/Colors'
 import Habilidades from './components/Habilidades/Habilidades'
 import Encabezado from './components/Encabezado/Encabezado'
@@ -35,6 +36,7 @@ function App() {
                 <Habilidades/>
                 <Formacion/>
                 {/* <Experiencia/> */}
+                <Bot/>
             </Box>
             <Pie/>
     </Box>
